@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧影像監控系統 - 物聯網應用專題</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>智慧影像監控系統</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#about">關於</a></li>
+                <li><a href="#features">功能特性</a></li>
+                <li><a href="#team">團隊成員</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首頁 -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>智慧影像監控系統</h1>
+            <p>物聯網應用專題 - 國立雲林科技大學</p>
+            <p class="subtitle">建立可即時偵測異常人員侵入的智慧監控系統</p>
+        </div>
+    </section>
+
+    <!-- 專題核心概念 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>專題核心概念</h2>
+            <div class="about-content">
+                <div class="content-section">
+                    <h3>系統概述</h3>
+                    <p>本專題以工廠或實驗室為應用場域，結合 USB 攝影機、雙 Raspberry Pi 架構與 AI 影像辨識模型，建立可即時偵測異常人員侵入，並將事件資訊與警示結果傳送至監控室的智慧監控系統。</p>
+                </div>
+                <div class="content-section">
+                    <h3>現場端運作流程</h3>
+                    <p>現場端由攝影 Pi 接收 USB 攝影機影像，再交由節點 Pi 執行 AI 人物辨識。當系統判定為異常事件時，會保留事件片段並傳送至後端與監控室，進一步觸發指示燈、蜂鳴器與監控畫面顯示。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系統目標 -->
+    <section id="objectives" class="objectives">
+        <div class="container">
+            <h2>系統目標</h2>
+            <div class="content-section">
+                <p>建立一套可即時監控工廠或實驗室入口區與限制區域的智慧影像監控系統，透過 AI 影像辨識技術判斷是否有人員異常侵入，並在偵測到事件後，將事件資訊與關鍵片段傳送至監控室，由指示燈與蜂鳴器發出警示，作為安全監控與人員管理的基礎原型。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 應用情境 -->
+    <section id="scenario" class="architecture">
+        <div class="container">
+            <h2>應用情境與運作流程</h2>
+            <div class="content-section">
+                <h3>應用場域</h3>
+                <p>本系統主要安裝於工廠或實驗室等需要安全管制的場所，尤其適合入口區、重要設備區與限制進入區。系統的重點是偵測是否有異常人員進入監控區域，讓管理者能即時掌握現場狀況。</p>
+            </div>
+            <div class="content-section">
+                <h3>系統運作流程</h3>
+                <p>USB 攝影機會插在攝影 Pi 上，持續擷取入口與重要區域畫面，再交由節點 Pi 進行 AI 人物辨識。當系統判定有人員異常侵入、可疑停留或進入限制區域時，便立即保留事件片段與時間資訊，並透過網路傳送至後端伺服器與監控室，最後由監控端畫面、指示燈與蜂鳴器提醒值班人員即時處理。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系統材料 -->
+    <section id="materials" class="materials">
+        <div class="container">
+            <h2>系統材料與設備</h2>
+            <div class="content-section">
+                <h3>硬件設備</h3>
+                <ul>
+                    <li><strong>Raspberry Pi 4 / 5 × 2</strong> - 攝影 Pi 和節點 Pi（監控端整合）</li>
+                    <li><strong>USB Webcam × 1</strong> - 連接於攝影 Pi</li>
+                    <li><strong>人體熱源感測器 × 1</strong> - 作為輔助感測裝置</li>
+                    <li><strong>LED 指示燈</strong> - 設置於監控室</li>
+                    <li><strong>蜂鳴器</strong> - 設置於監控室</li>
+                </ul>
+            </div>
+            <div class="content-section">
+                <h3>軟件環境</h3>
+                <ul>
+                    <li><strong>Python</strong> - 主要開發語言</li>
+                    <li><strong>AI 偵測模型</strong> - 例如 YOLO 等現成模型</li>
+                    <li><strong>網路傳輸環境</strong> - Wi-Fi 或 Ethernet 區域網路</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系統功能 -->
+    <section id="functions" class="functions">
+        <div class="container">
+            <h2>系統功能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📹</div>
+                    <h3>即時影像擷取</h3>
+                    <p>利用 USB 攝影機持續擷取入口區與重要區域的現場畫面，作為後續 AI 辨識依據。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>異常人物辨識</h3>
+                    <p>透過 AI 模型進行人物偵測，判斷是否有異常侵入、可疑停留或進入限制區域的情形。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h3>監控室警示</h3>
+                    <p>異常事件成立後，將結果傳送至監控室，並啟動指示燈、蜂鳴器與事件資訊顯示。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專題特色 -->
+    <section id="highlights" class="highlights">
+        <div class="container">
+            <h2>專題特色</h2>
+            <div class="content-section">
+                <p>本網站以簡報風格整合目標、應用情境、材料、系統功能、流程架構、平面配置圖與組員分工，方便用於課堂展示、GitHub Pages 發表與期末提案說明。</p>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="team">
+        <div class="container">
+            <h2>團隊成員</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨</div>
+                    <h3>解皓翔</h3>
+                    <p>學號：B11213060</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩</div>
+                    <h3>高睬薇</h3>
+                    <p>學號：B11313109</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩</div>
+                    <h3>江亮儀</h3>
+                    <p>學號：B11313115</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 智慧影像監控系統專題 | 國立雲林科技大學</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
